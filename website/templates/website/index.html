@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Shop With Preeti | Product By Coding India</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins:300,700' rel='stylesheet' type='text/css'>
+
+    {% load static %}
+    <!-- Style Sheet-->
+    <link rel="stylesheet" type="text/css" href="{% static 'font/font-awesome/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'js/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'js/owl-carousel/owl.theme.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/Shopping By Preeti.ico' %}">
+    <!-- META TAGS -->
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body id="bd" class=" cms-index-index cms-simen-home-page-v2 default cmspage">
+    <div id="sns_wrapper">
+        <!-- HEADER -->
+        <div id="sns_header" class="wrap">
+
+            <!-- Header Logo -->
+            <div id="sns_header_logo">
+                <div class="container">
+                    <div class="container_in">
+                        <div class="row">
+                            <h1 id="logo" class="responsv col-md-3">
+                                <a href="index.html" title="Magento Commerce">
+                                    <img alt="" src="{% static 'images/Shopping By Preeti.png' %}"
+                                        style="width: 120px; height: 120px; margin-top: -25px;">
+                                </a>
+                            </h1>
+                            <div class="col-md-9 policy">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-phone-12">
+                                        <div class="policy_custom">
+                                            <div class="policy-icon">
+                                                <em class="fa fa-truck"> </em>
+                                            </div>
+                                            <p class="policy-titile">Dedicated To Mom</p>
+                                            <p class="policy-ct">Mom's Magic</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-phone-12">
+                                        <div class="policy_custom">
+                                            <div class="policy-icon">
+                                                <em class="fa fa-cloud-upload"> </em>
+                                            </div>
+                                            <p class="policy-titile">Partner With Amazon</p>
+                                            <p class="policy-ct">Amazon Product At low Rates</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-phone-12">
+                                        <div class="policy_custom">
+                                            <div class="policy-icon">
+                                                <em class="fa fa-gift"> </em>
+                                            </div>
+                                            <p class="policy-titile">Affiliate Program</p>
+                                            <p class="policy-ct">Get Discounts From Us</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu -->
+    
+
+
+        <!-- CONTENT -->
+        <div id="sns_content" class="wrap layout-m">
+            <div class="container">
+                <div class="row">
+                    <div id="sns_main" class="col-md-12 col-main">
+                        <div id="sns_mainmidle">
+                            <div id="sns_producttaps1" class="sns_producttaps_wraps">
+                                <h3 class="precar">PRODUCT TAPS</h3>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home"
+                                            role="tab" data-toggle="tab">Latest</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                            data-toggle="tab">Sale off</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                                            data-toggle="tab">Best sale</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    {% for i in prod %}
+                                    <div role="tabpanel" class="tab-pane active" id="home">
+                                        <div class="products-grid row style_grid">
+                                            <div class="item col-lg-2d4 col-md-3 col-sm-4 col-xs-6 col-phone-12">
+                                                <div class="item-inner">
+                                                    <div class="prd">
+                                                        <div class="item-img clearfix">
+                                                            <div class="ico-label">
+                                                                <span class="ico-product ico-new">New</span>
+                                                                <span class="ico-product ico-sale">Sale</span>
+                                                            </div>
+
+                                                            <a class="product-image have-additional"
+                                                                title="Modular Modern" href="detail.html">
+                                                                <span class="img-main">
+                                                                    <img src="{% static 'images/products/1.jpg' %}"
+                                                                        alt="">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="item-info">
+                                                            <div class="info-inner">
+                                                                <div class="item-title">
+                                                                    <a title="Modular Modern" href="detail.html">
+                                                                        {{i.name|slice:"20"}}... </a>
+                                                                </div>
+                                                                <div class="item-price">
+                                                                    <div class="price-box">
+                                                                        <span class="regular-price">
+                                                                            <span class="price">
+                                                                                <span class="price1">$ {{i.price}}</span>
+                                                                                <span class="price2">$ {{i.mrp}}</span>
+                                                                            </span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+
+
+
+
+                                   
+                            <div class="sns-latestblog">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="block-title">
+                                            <h3>LATEST POSTS</h3>
+                                        </div>
+                                    </div>
+                                    <div id="latestblog132" class="latestblog-content owl-carousel owl-theme"
+                                        style="display: inline-block">
+                                        <div class="item">
+                                            <div class="banner5">
+                                                <a href="blog-detail.html">
+                                                    <img src="{% static 'images/blog/blog5.jpg' %}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog-page">
+                                                <div class="blog-left">
+                                                    <p class="text1">08</p>
+                                                    <p class="text2">JAN</p>
+                                                </div>
+
+                                                <div class="blog-right">
+                                                    <p class="style1"><a href="blog-detail.html">Chair furnitured</a>
+                                                    </p>
+                                                    <p class="style2">Lorem Ipsum has been the industry's </p>
+                                                    <p class="style3">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="banner5">
+                                                <a href="blog-detail.html">
+                                                    <img src="{% static 'images/blog/blog6.jpg' %}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog-page">
+                                                <div class="blog-left">
+                                                    <p class="text1">06</p>
+                                                    <p class="text2">JAN</p>
+                                                </div>
+
+                                                <div class="blog-right">
+                                                    <p class="style1"><a href="blog-detail.html">Leather Sofas</a></p>
+                                                    <p class="style2">When an unknown printer took galley</p>
+                                                    <p class="style3">When an unknown printer took a galley of type and
+                                                        scrambled it to make a type specimen book. It has survived not
+                                                        only ...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="banner5">
+                                                <a href="blog-detail.html">
+                                                    <img src="{% static 'images/blog/blog7.jpg' %}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog-page">
+                                                <div class="blog-left">
+                                                    <p class="text1">05</p>
+                                                    <p class="text2">JAN</p>
+                                                </div>
+
+                                                <div class="blog-right">
+                                                    <p class="style1"><a href="blog-detail.html">Chair furnitured</a>
+                                                    </p>
+                                                    <p class="style2">Lorem Ipsum has been </p>
+                                                    <p class="style3">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry ...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="item">
+                                            <div class="banner5">
+                                                <a href="blog-detail.html">
+                                                    <img src="{% static 'images/blog/blog5.jpg' %}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog-page">
+                                                <div class="blog-left">
+                                                    <p class="text1">08</p>
+                                                    <p class="text2">JAN</p>
+                                                </div>
+
+                                                <div class="blog-right">
+                                                    <p class="style1"><a href="blog-detail.html">Chair furnitured</a>
+                                                    </p>
+                                                    <p class="style2">Lorem Ipsum has been the industry's </p>
+                                                    <p class="style3">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="banner5">
+                                                <a href="blog-detail.html">
+                                                    <img src="{% static 'images/blog/blog6.jpg' %}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog-page">
+                                                <div class="blog-left">
+                                                    <p class="text1">06</p>
+                                                    <p class="text2">JAN</p>
+                                                </div>
+
+                                                <div class="blog-right">
+                                                    <p class="style1"><a href="blog-detail.html">Leather Sofas</a></p>
+                                                    <p class="style2">When an unknown printer took galley</p>
+                                                    <p class="style3">When an unknown printer took a galley of type and
+                                                        scrambled it to make a type specimen book. It has survived not
+                                                        only ...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="banner5">
+                                                <a href="blog-detail.html">
+                                                    <img src="{% static 'images/blog/blog7.jpg' %}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog-page">
+                                                <div class="blog-left">
+                                                    <p class="text1">05</p>
+                                                    <p class="text2">JAN</p>
+                                                </div>
+
+                                                <div class="blog-right">
+                                                    <p class="style1"><a href="blog-detail.html">Chair furnitured</a>
+                                                    </p>
+                                                    <p class="style2">Lorem Ipsum has been </p>
+                                                    <p class="style3">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry ...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AND CONTENT -->
+
+        <!-- PARTNERS -->
+        <div id="sns_partners" class="wrap">
+            <div class="container">
+                <div class="slider-wrap">
+                    <div class="partners_slider_in">
+                        <div id="partners_slider1" class="our_partners owl-carousel owl-theme owl-loaded"
+                            style="display: inline-block">
+                            <div class="item" style="margin-left: 55px;">
+                                <a class="banner11" href="#" target="_blank">
+                                    <img alt="" src="data:image/png;base64,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">
+                                </a>
+                            </div>
+                            <div class="item" style="margin-left: 55px;">
+                                <a class="banner11" href="#" target="_blank">
+                                    <img alt="" src="data:image/png;base64,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">
+                                </a>
+                            </div>
+                            <div class="item" style="margin-left: 55px;">
+                                <a class="banner11" href="#" target="_blank">
+                                    <img alt="" src="data:image/jpeg;base64,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">
+                                </a>
+                            </div>
+                            <!-- <div class="item">
+                                <a class="banner11" href="#" target="_blank">
+                                    <img alt="" src="{% static 'images/brands/4.png' %}">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a class="banner11" href="#" target="_blank">
+                                    <img alt="" src="{% static 'images/brands/5.png' %}">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a class="banner11" href="#" target="_blank">
+                                    <img alt="" src="{% static 'images/brands/6.png' %}">
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AND PARTNERS -->
+
+        <!-- FOOTER -->
+        <div id="sns_footer" class="footer_style vesion2 wrap">
+            <div id="sns_footer_top" class="footer">
+                <div class="container">
+                    <div class="container_in">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12 col-xs-12 column0">
+                                <div class="contact_us">
+                                    <h6>Contact us</h6>
+                                    <ul class="fa-ul">
+                                        <li class="pd-right mt-2">
+                                            <i class="fa-li fa fw fa-home"> </i>
+                                            Online Presence Only - Partner with Amazon
+                                        </li>
+                                        <!-- <li>
+                                            <i class="fa-li fa fw fa-phone"> </i>
+                                        </li> -->
+                                        <li>
+                                            <i class="fa-li fa fw fa-envelope"> </i>
+                                            <p>
+                                                <a href="mailto:digamber1011@gmail.com">digamber1011@gmail.com - Email Us For Query</a>
+                                            </p>
+                                            <!-- <p>
+                                                <a href="mailto:info@yourdomain.com">info@yourdomain.com</a>
+                                            </p> -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-phone-12 col-xs-6 col-sm-3 col-md-2 column column1">
+                                <h6>Service</h6>
+                                <ul>
+                                    <li>
+                                        <a href="#">rices & Currencies</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Secure Payment</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Delivery Times & Costs</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Returns & Exchanges</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">FAQ's</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-phone-12 col-xs-6 col-sm-3 col-md-2 column column2">
+                                <h6>account</h6>
+                                <ul>
+                                    <li>
+                                        <a href="#">My account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Wishlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Order history</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Specials</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gift vouchers</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-phone-12 col-xs-6 col-sm-3 col-md-2 column column3">
+                                <h6>information</h6>
+                                <ul>
+                                    <li>
+                                        <a href="#">My account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Wishlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Order history</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Specials</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gift vouchers</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-phone-12 col-xs-6 col-sm-3 col-md-3 column column4">
+                                <div class="subcribe-footer">
+                                    <div class="block_border block-subscribe">
+                                        <div class="block_head">
+                                            <h6>Newsletter</h6>
+                                            <p>Register your email for news</p>
+                                        </div>
+                                        <form id="newsletter-validate-detail">
+                                            <div class="block_content">
+                                                <div class="input-box">
+                                                    <div class="input_warp">
+                                                        <input id="newsletter"
+                                                            class="input-text required-entry validate-email" type="text"
+                                                            title="Sign up for our newsletter"
+                                                            placeholder="Your email here" name="email">
+                                                    </div>
+                                                    <div class="button_warp">
+                                                        <button class="button gfont" title="Subcribe" type="submit">
+                                                            <span>
+                                                                <span>Subscribe</span>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sns_footer_bottom" class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="bottom-pd1 col-sm-6">
+                            <div class="sns-copyright">
+                                © Shop With Preeti. All Rights Reserved. Developed by
+                                <a title="" data-original-title="Visit SNSTheme.Com!" data-toggle="tooltip"
+                                    href="http://www.snstheme.com/">codingindia.co.in</a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AND FOOTER -->
+    </div>
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/less.min.js' %}"></script>
+    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/sns-extend.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

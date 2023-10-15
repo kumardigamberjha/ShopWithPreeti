@@ -1,0 +1,43 @@
+{% extends 'website/index.html' %}
+
+{% block content %}
+
+<style>
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* Set a flex-basis to control the number of items per row */
+        flex-basis: calc(25% - 20px); /* 25% for 4 items per row, minus margin/padding */
+        gap: 20px; /* Adjust the gap between items as needed */
+    }
+    .flex-item {
+        flex-grow: 1;
+        background-color: #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+
+        /* You can add more styling to your items as needed */
+    }
+    .flex-item img{
+        width: 250px;
+        height: 250px;
+        object-fit: cove;
+    }
+</style>
+
+<div class="conatiner" style="width: 80%; margin: auto;">
+    <div class="" >
+        <ul class="flex-container" style="display: flex; flex-wrap: wrap; flex-basis: calc(85% - 20px); gap: 20px; ">
+            {% for i in data %}
+            <li class="flex-item">
+                <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
+                    <img src="http://placehold.it/500x722" alt="">
+                    <p>Name 1</p>
+                </a>
+            </li>
+            {% endfor %}
+           
+        </ul>
+    </div>
+
+    {% endblock content %}
