@@ -1,0 +1,73 @@
+{% extends 'blogs/index.html' %}
+
+{% load static %}
+
+
+{% block title %}
+<title>{{play.name}} - coding india</title>
+{% endblock title %}
+
+{% block meta %}
+<meta name="keywords"
+    content="blogs, coding india, html, python, css, SQL, Javascript, How to, Data Science, Data Science with Python, coding, programming, Tips, Learn to code, AI, ML, Tutorials, Codes, Courses, Learning">
+<meta name="description"
+    content="Coding india Blog page is one where you can read blogs on different topics like Data Science, machine Learning AI etc.">
+<meta name="author" content="Coding India , Digamber Jha">
+
+{% endblock meta %}
+
+<style>
+
+</style>
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+
+<div class="menu-button text-dark" id="menuButton" >&#9776;</div>
+
+<!-- Sidebar -->
+<nav id="sidebar" class="sidebar" style="z-index: 10000;">
+  <div class="close-button" id="closeButton">&times;</div>
+  <a href="/">Home</a>
+  <a href="#">Website Development</a>
+  <a href="#">Django Development</a>
+  <a href="#">Coding</a>
+  <!-- Add more options as needed -->
+</nav>
+  
+<div class="container" style="margin-bottom: 35px;">
+    <h1 class="text-center mb-3 servicetitle mt-4"
+        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;">
+        {{play.name}} Blogs</h1>
+
+    <div class="row">
+
+        {%for blog in blogs %}
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title blog-title">{{blog.title|slice:"0:80"}}...
+                    </h5>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="by-date">By <a href="">{{blog.author}}</a></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <li class="by-date">{{blog.pub_date}}</li>
+                        </div>
+                    </div>
+                    <p class="card-text">{{blog.content|safe|slice:"0:50"}}...
+                    </p>
+                    <a href="{% url 'readblog' blog.post_id %}" class="btn btn-outline-dark" style="letter-spacing: 1px;">Read More<ion-icon
+                            name="arrow-forward-outline" class="mt-2 mx-2"></ion-icon> </a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+</div>
+{% endblock content %}
