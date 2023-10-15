@@ -24,13 +24,13 @@
 
             <!-- Header Logo -->
             <div id="sns_header_logo">
-                <div class="container">
+                <div class="container mt-2">
                     <div class="container_in">
                         <div class="row">
                             <h1 id="logo" class="responsv col-md-3">
                                 <a href="index.html" title="Magento Commerce">
                                     <img alt="" src="{% static 'images/Shopping By Preeti.png' %}"
-                                        style="width: 120px; height: 120px; margin-top: -25px;">
+                                        style="width: 120px; height: 120px; margin-top: -15px;">
                                 </a>
                             </h1>
                             <div class="col-md-9 policy">
@@ -73,7 +73,7 @@
 
 
         <!-- CONTENT -->
-        <div id="sns_content" class="wrap layout-m">
+        <div id="sns_content" class="wrap layout-m mb-3">
             <div class="container">
                 <div class="row">
                     <div id="sns_main" class="col-md-12 col-main">
@@ -92,22 +92,25 @@
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    {% for i in prod %}
                                     <div role="tabpanel" class="tab-pane active" id="home">
                                         <div class="products-grid row style_grid">
+                                        {% for i in prod %}
                                             <div class="item col-lg-2d4 col-md-3 col-sm-4 col-xs-6 col-phone-12">
                                                 <div class="item-inner">
                                                     <div class="prd">
                                                         <div class="item-img clearfix">
                                                             <div class="ico-label">
-                                                                <span class="ico-product ico-new">New</span>
-                                                                <span class="ico-product ico-sale">Sale</span>
+                                                                {% if i.badge == None %}
+                                                                {% else %}
+                                                                <span class="ico-product ico-new">{{i.badge}}</span>
+                                                                {% endif %}
+                                                                <!-- <span class="ico-product ico-sale">Sale</span> -->
                                                             </div>
 
                                                             <a class="product-image have-additional"
-                                                                title="Modular Modern" href="detail.html">
+                                                                title="Modular Modern" href="{{i.url}}">
                                                                 <span class="img-main">
-                                                                    <img src="{% static 'images/products/1.jpg' %}"
+                                                                    <img src="{{i.img}}"
                                                                         alt="">
                                                                 </span>
                                                             </a>
@@ -115,15 +118,15 @@
                                                         <div class="item-info">
                                                             <div class="info-inner">
                                                                 <div class="item-title">
-                                                                    <a title="Modular Modern" href="detail.html">
-                                                                        {{i.name|slice:"20"}}... </a>
+                                                                    <a title="Modular Modern" href="{{i.url}}">
+                                                                        {{i.name|slice:"70"}}... </a>
                                                                 </div>
                                                                 <div class="item-price">
                                                                     <div class="price-box">
                                                                         <span class="regular-price">
                                                                             <span class="price">
-                                                                                <span class="price1">$ {{i.price}}</span>
-                                                                                <span class="price2">$ {{i.mrp}}</span>
+                                                                                <span class="price1">Rs. {{i.price}}</span>
+                                                                                <!-- <span class="price2"> {{i.mrp}}</span> -->
                                                                             </span>
                                                                         </span>
                                                                     </div>
@@ -133,18 +136,18 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {% endfor %}
                                         </div>
                                     </div>
-                                    {% endfor %}
 
 
 
 
                                    
-                            <div class="sns-latestblog">
+                            <div class="sns-latestblog" style="margin-top: 35px;">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="block-title">
+                                        <div class="block-title ">
                                             <h3>LATEST POSTS</h3>
                                         </div>
                                     </div>
